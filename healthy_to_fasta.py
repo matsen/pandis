@@ -27,5 +27,6 @@ out_path += '.healthy.fasta'
 
 with open(out_path, 'w') as out_f:
     for _, row in df.iterrows():
+        continue if not row['healthy']
     	out_f.write('>{}\n'.format(row['unique_ids']))
     	out_f.write('{}\n'.format(row['indel_reversed_seqs']))
